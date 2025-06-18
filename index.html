@@ -25,7 +25,7 @@
       --text-color: #ffffff;
       --section-bg-color: linear-gradient(to right, #990000, #1f1f1f); /* Raptors-inspired red to black */
       --section-text-color: #ffffff;
-      --highlight-color: #f70000;
+      --highlight-color: #ff2828;
       --border-radius: 8px;
       --max-content-width: 1320px;
       --base-spacing: 20px;
@@ -53,6 +53,11 @@
       margin-bottom: calc(var(--base-spacing) * 1.5);
       font-size: 2rem;
       color: var(--highlight-color);
+      text-shadow:
+        -1px -1px 0 #ffffff,
+         1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+         1px  1px 0 #ffffff;
     }
     .centered-text {
       text-align: center;
@@ -332,7 +337,13 @@
     }
 
     .title-red {
-      color: #f70000;
+      color: var(--highlight-color);
+      text-shadow:
+        -1.4px -1.4px 0 #000000,
+         1.4px -1.4px 0 #000000,
+        -1.4px  1.4px 0 #000000,
+         1.4px  1.4px 0 #000000;
+      font-size: 1.6rem;
     }
 
     .title-white {
@@ -350,6 +361,11 @@
     .heading-title {
       color: #f70000;
       display: inline-block;
+      text-shadow:
+        -1px -1px 0 #ffffff,
+         1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+         1px  1px 0 #ffffff;
     }
 
     .heading-subtitle {
@@ -419,6 +435,12 @@
     .section h2 {
       margin-bottom: 0.5em;
       color: var(--highlight-color);
+      text-shadow:
+        -1.4px -1.4px 0 #000000,
+         1.4px -1.4px 0 #000000,
+        -1.4px  1.4px 0 #000000,
+         1.4px  1.4px 0 #000000;
+      font-size: 1.6rem;
     }
     .section p {
       margin-bottom: 0.75em;
@@ -499,7 +521,7 @@
               <img src="Raptors_logo.png" alt="Raptors Logo" />
               <img src="Canadian_Flag.png" alt="Canadian Flag" />
             </div>
-            <h2 style="font-size: 2rem;">A.J. Lawson</h2>
+            <h2 style="font-size: 2.3rem; margin-top: 20px;">A.J. Lawson</h2>
             <img src="A.J._Lawson_Headshot.png" alt="A.J. Lawson Headshot" class="player-image" />
             <p class="centered-text"><strong>Toronto Raptors</strong></p>
 
@@ -564,6 +586,7 @@
 
             <ul>
               <li>Primarily takes shots from three-point range or at the rim</li>
+              <li>Efficent 3-Point shooter at the G League level</li>
               <li>Draws fouls at a high rate (80th percentile in FTA/36)</li>
               <li>Strong rebounder for his position (80th percentile in REB%)</li>
               <li>Active on hustle plays (91st percentile in % LOOSE BALLS RECOVERED DEF) & (79th percentile in OREB%)</li>
@@ -574,9 +597,9 @@
           <div class="section" id="notes-2">
             <h2>Areas of Improvement</h2>
             <ul>
-              <li>Rarely attempts midrange shots and struggles from that area (33% in NBA, 23% in G League)</li>
-              <li>Poor free-throw shooter (7th percentile in FT%)</li>
-              <li>Limited playmaking impact (8th percentile in Assist Ratio)</li>
+              <li>Midrange shot volume and efficiency (33% in NBA, 23% in G League)</li>
+              <li>Free Throw shooting (7th percentile in FT%)</li>
+              <li>Playmaking (8th percentile in Assist Ratio)</li>
             </ul>
           </div>
 
