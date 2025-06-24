@@ -348,6 +348,11 @@
 
     .title-white {
       color: white;
+      text-shadow:
+        -1.4px -1.4px 0 #000000,
+         1.4px -1.4px 0 #000000,
+        -1.4px  1.4px 0 #000000,
+         1.4px  1.4px 0 #000000;
     }
 
 
@@ -528,7 +533,7 @@
             <div class="inline-stats">
               <div class="inline-stats-inner">
               <p><strong>Position(s):</strong> SG</p>
-              <p><strong>Age:</strong> 24</p>
+              <p><strong>Age:</strong> <span id="player-age"></span></p>
             </div>
           </div>
 
@@ -759,6 +764,13 @@
 
   const impactPath = "player_impact_estimate.png";
 
+// Preload all images
+[densityMapPath, efficiencyChartPath, radarMapPath, gLeagueRadarPath, nbaEffChartPath, gLeagueEffChartPath].forEach(path => {
+  const img = new Image();
+  img.src = path;
+});
+
+
   // 2) Grab DOM
   const mainChart = document.getElementById("mainChart");
   const thumbChart = document.getElementById("thumbChart");
@@ -904,6 +916,26 @@
       statsImage.src = newSrc;
     });
   });
+
+  // A.J. Lawson's birthdate
+  const birthDate = new Date("2000-07-15"); // July 15, 2000
+
+  // Today's date
+  const today = new Date();
+
+  // Calculate age
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const hasBirthdayPassed = (
+    today.getMonth() > birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate())
+  );
+
+  if (!hasBirthdayPassed) {
+    age -= 1;
+  }
+
+  // Inject into the HTML
+  document.getElementById("player-age").textContent = age;
 
   </script>
 </body>
